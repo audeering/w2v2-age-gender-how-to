@@ -21,7 +21,8 @@ a stripped-down version with six transformer layers.
 The models were exported to
 [ONNX](https://onnx.ai/).
 Further details are given in the associated 
-paper (tba).
+paper (tba)
+and [notebook](./notebook.ipynb).
 
 ## Quick start
 
@@ -32,7 +33,7 @@ Create / activate Python virtual environment and install
 $ pip install audonnx
 ```
 
-Load model and test on random signal.
+Load the model with six layers and test on random signal.
 
 ```python
 import audeer
