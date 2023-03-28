@@ -1,0 +1,67 @@
+name: Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-20.04, windows-latest, macOS-latest ]
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache emodb
+      uses: actions/cache@v2
+      with:
+        path: cache/emodb
+        key: emodb-1.3.0
+
+    - name: Cache model
+      uses: actions/cache@v2
+      with:
+        path: cache/model.zip
+        key: model-1.1.1
+
+    - name: Cache predictions
+      uses: actions/cache@v2
+      with:
+        path: cache/-1033597102444974303.pkl
+        key: predictions-emodb-1.3.0-model-1.1.1
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Prepare Ubuntu
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg mediainfo
+      if: matrix.os == 'ubuntu-latest' || matrix.os == 'ubuntu-20.04'
+
+    - name: Prepare OSX
+      run: brew install ffmpeg mediainfo
+      if: matrix.os == 'macOS-latest'
+
+    - name: Windows
+      run: choco install ffmpeg mediainfo-cli
+      if: matrix.os == 'windows-latest'
+
+    - name: Install dependencies
+      run: |
+        python -V
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r tests/requirements.txt
+
+    - name: Test with pytest
+      run: |
+        python -m pytest --nbmake --nbmake-timeout=3000 notebook.ipynb
