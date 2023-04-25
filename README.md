@@ -15,7 +15,7 @@ model on
 [Mozilla Common Voice](https://commonvoice.mozilla.org/), 
 [Timit](https://catalog.ldc.upenn.edu/LDC93s1) and 
 [Voxceleb 2](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html).
-We provide two models: 
+We provide two variants of the model: 
 one with all 24 transformer layers and 
 a stripped-down version with six transformer layers.
 The models were exported to
@@ -23,6 +23,18 @@ The models were exported to
 Further details are given in the associated 
 paper (tba)
 and [notebook](./notebook.ipynb).
+
+## License
+
+The model can be used for non-commercial purposes,
+see [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+For commercial usage,
+a license for
+[devAIce](https://www.audeering.com/devaice/)
+must be obtained.
+The source code in this GitHub repository 
+is released under the following
+[license](./LICENSE).
 
 ## Quick start
 
