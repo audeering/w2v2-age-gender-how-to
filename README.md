@@ -23,7 +23,7 @@ The models were exported to
 The original 
 [Torch](https://pytorch.org/)
 model is hosted at
-Hugging Face:
+[Hugging Face](https://huggingface.co):
 [6 layers](https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim) and
 [24 layers](https://huggingface.co/audeering/wav2vec2-large-robust-6-ft-age-gender).
 Further details are given in the associated 
