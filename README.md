@@ -20,8 +20,14 @@ one with all 24 transformer layers and
 a stripped-down version with six transformer layers.
 The models were exported to
 [ONNX](https://onnx.ai/).
+The original 
+[Torch](https://pytorch.org/)
+model is hosted at
+Hugging Face:
+[6 layers](https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim)] and
+[24 layers](https://huggingface.co/audeering/wav2vec2-large-robust-6-ft-age-gender).
 Further details are given in the associated 
-paper (tba)
+[paper](https://arxiv.org/abs/2306.16962)
 and [notebook](./notebook.ipynb).
 
 ## License
