@@ -88,4 +88,14 @@ $ jupyter notebook notebook.ipynb
 ## Citation
 
 If you use our model in your own work, please cite the following
-paper (tba)
+[paper](https://arxiv.org/abs/2306.16962):
+
+``` bibtex
+@inproceedings{,
+   author = {Felix Burkhardt and Johannes Wagner and Hagen Wierstorf and Florian Eyben and Björn Schuller},
+   editor = {Peter Jax and Sebastian Mölller},
+   journal = {15th ITG conference on Speech Communication},
+   title = {Speech-based Age and Gender Prediction with Transformers},
+   year = {2023},
+}
+```
